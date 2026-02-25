@@ -1,0 +1,193 @@
+/* Fuente global y fondo animado */
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(-45deg, #005fec, #a54bd5, #ff62b6, #ffa39f);
+  background-size: 400% 400%;
+  animation: gradientBG 25s ease infinite;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: white;
+}
+
+@keyframes gradientBG {
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 60px 20px 40px;
+}
+header h1 { 
+  font-size: 48px; 
+  font-weight:700; 
+  color: #ffffff; 
+  text-shadow: 2px 2px 12px rgba(0,0,0,0.6); 
+}
+header p { 
+  font-size:18px; 
+  color: #ffd78f; 
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
+}
+
+/* Main */
+main { flex:1; display:flex; justify-content:center; align-items:flex-start; padding:40px; }
+.container { display:flex; gap:40px; flex-wrap:wrap; justify-content:center; }
+
+/* Card con overlay semitransparente */
+.card { 
+  background: rgba(0,0,0,0.25); 
+  padding:40px;
+  border-radius:25px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.3);
+  width:100%;
+  max-width:300px;
+  text-align:center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover { 
+  transform: translateY(-5px); 
+  box-shadow:0 25px 60px rgba(0,0,0,0.35); 
+}
+.output-card { max-width:400px; }
+
+/* Sections */
+.section { margin:25px 0; }
+
+/* Inputs */
+input[type="number"], input[type="text"] {
+  padding:15px; 
+  width:90%; 
+  border-radius:20px; 
+  border:1px solid #ccc; 
+  font-size:16px; 
+  text-align:center; 
+  margin-bottom: 20px; 
+}
+
+/* Separación label/input */
+.section label {
+    display: block; 
+    margin-bottom: 8px; 
+    font-weight: 500;
+}
+
+/* Opciones (checkboxes) alineadas */
+.section.options {
+    display: flex;
+    justify-content: center;
+    gap: 15px; 
+    flex-wrap: wrap; 
+    margin-top: 10px; 
+}
+
+.section.options label {
+    display: flex;
+    align-items: center;
+    gap: 5px; 
+    font-size: 16px;
+}
+/* Botones principales dinámicos */
+button {
+    padding: 18px 40px;
+    border: 2px solid transparent;
+    border-radius: 35px;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    color: white;
+    background: linear-gradient(135deg, #005fec, #a54bd5);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Hover botones */
+button:hover {
+    background: linear-gradient(135deg, #ff62b6, #ffa39f);
+    transform: translateY(-6px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.45);
+}
+
+/* Click realista */
+button:active {
+    transform: translateY(2px) scale(0.98);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+}
+
+/* Bordes brillantes animados */
+button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(255,255,255,0.3), rgba(255,255,255,0.0), rgba(255,255,255,0.3));
+    transform: skewX(-20deg);
+    transition: all 0.5s;
+}
+
+button:hover::before {
+    left: 0;
+}
+
+/* Micro animación de brillo al pasar cursor */
+button span {
+    position: relative;
+    z-index: 1;
+}
+
+/* Botones específicos */
+button#generate {
+    background: linear-gradient(135deg, #ff62b6, #a54bd5);
+}
+button#generate:hover {
+    background: linear-gradient(135deg, #005fec, #ffa39f);
+}
+
+button#copy {
+    background: linear-gradient(135deg, #ffd78f, #ffa39f);
+}
+button#copy:hover {
+    background: linear-gradient(135deg, #ff62b6, #a54bd5);
+}
+
+/* Glow */
+.glow { 
+    box-shadow:0 0 25px #fff; 
+    border-color:#fff; 
+    animation:pulse 0.8s; 
+}
+@keyframes pulse { 
+  0%{box-shadow:0 0 15px #fff;}
+  50%{box-shadow:0 0 35px #fff;}
+  100%{box-shadow:0 0 15px #fff;}
+}
+
+/* Fuerza */
+.strength { margin-top:15px; }
+#strength-bar { 
+  height:10px; 
+  width:0%; 
+  background:#ff62b6; 
+  border-radius:10px; 
+  transition: width 0.5s, background 0.5s; 
+}
+#strength-text { margin-top:5px; font-weight:600; color:white; text-shadow: 1px 1px 6px rgba(0,0,0,0.5); }
+
+/* Footer */
+footer { 
+  text-align:center; 
+  padding:30px; 
+  font-size:14px; 
+  color: #ffd78f; 
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
