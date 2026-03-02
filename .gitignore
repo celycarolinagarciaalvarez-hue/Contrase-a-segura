@@ -1,0 +1,53 @@
+# =========================
+# PYTHON
+# =========================
+__pycache__/        # Carpeta donde Python guarda archivos compilados temporales
+*.py[cod]           # Ignora archivos compilados: .pyc .pyo .pyd
+*.sqlite3           # Ignora bases de datos SQLite locales
+*.log               # Ignora archivos de registros (logs)
+*.pot               # Archivos de traducción generados automáticamente
+*.pyc               # Archivos compilados de Python
+*.pyo               # Version optimizada compilada de Python
+*.pyd               # Extensiones binarias de Python (Windows)
+
+# Virtual env
+.env                # Variables de entorno (contraseñas, tokens, claves secretas)
+venv/               # Entorno virtual Python
+env/                # Otro posible nombre de entorno virtual
+
+# =========================
+# DJANGO
+# =========================
+db.sqlite3          # Base de datos local de desarrollo
+media/              # Archivos subidos por usuarios (no se versionan)
+staticfiles/        # Archivos estáticos generados con collectstatic
+
+# =========================
+# DOCKER
+# =========================
+*.env               # Variables de entorno usadas por Docker
+docker-compose.override.yml  # Configuración local personalizada de Docker
+
+# =========================
+# IDEs
+# =========================
+.vscode/            # Configuración personal del editor VSCode
+.idea/              # Configuración personal del editor PyCharm
+
+# =========================
+# SISTEMA
+# =========================
+.DS_Store           # Archivo oculto generado por macOS
+Thumbs.db           # Archivo miniatura generado por Windows
+
+# =========================
+# ARCHIVOS SENSIBLES
+# =========================
+*.key               # Claves privadas
+*.pem               # Certificados de seguridad
+secrets.json        # Archivo típico de credenciales
+
+# =========================
+# TU PROYECTO
+# =========================
+passwords/          # Carpeta que decides no subir al repositorio

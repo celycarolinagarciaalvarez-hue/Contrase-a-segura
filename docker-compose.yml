@@ -1,7 +1,7 @@
-services:
-  web:
-    build: .
+services:        # Servicios del proyecto
+  web:           # Nombre del contenedor
+    build: .     # Construye usando el Dockerfile actual
     ports:
-      - "8001:8000"
+      - "8001:8000"  # PC:8001 → Contenedor:8000
     volumes:
-      - .:/app
+      - .:/app   # Sincroniza tu carpeta con /app dentro del contenedor
